@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Love You</title>
+    <style>
+        canvas {
+            background-color: white;
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Media query para pantallas más pequeñas (teléfonos) */
+        @media (max-width: 600px) {
+            canvas {
+                width: 90vw;  /* Ajusta el tamaño del canvas al 90% del ancho de la pantalla */
+                height: auto; /* Mantiene la proporción */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<canvas id="heartCanvas" width="300" height="300"></canvas> <!-- Tamaño inicial para móviles -->
+<script>
+    const canvas = document.getElementById('heartCanvas');
+    const ctx = canvas.getContext('2d');
+
+    function drawHeart(w, h, iteration) {
+        if (iteration >= colors.length) return;
+
+        ctx.beginPath();
+        ctx.fillStyle = colors[iteration];
+        let a = 0;
+
+        ctx.moveTo(canvas.width / 2, canvas.height / 2);  // Centra el corazón
+
+        while (a < 2 * Math.PI) {
+            const x = w * (16 * Math.pow(Math.sin(a), 3));
+            const y = h * (13 * Math.cos(a) - 5 * Math.cos(2 * a) - 2 * Math.cos(3 * a) - Math.cos(4 * a));
+            ctx.lineTo(canvas.width / 2 + x, canvas.height / 2 - y);  // Ajusta al tamaño del canvas
+            a += 0.02;
+        }
+
+        ctx.fill();
+        drawHeart(w - 2, h - 2, iteration + 1);
+
+        if (iteration === colors.length - 1) {
+            ctx.font = 'bold 20px Verdana';
+            ctx.fillStyle = 'black';
+            ctx.textAlign = 'center';
+            ctx.fillText('I Love You <3', canvas.width / 2, canvas.height / 2);
+        }
+    }
+
+    const colors = ['red', 'red', 'red'];
+    drawHeart(16, 16, 0);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Para ti </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            background-color: #ff4444;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #ff7777;
+        }
+
+        /* Media query para pantallas más pequeñas (teléfonos) */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 20px;
+            }
+
+            button {
+                width: 100%;
+                font-size: 16px;
+                padding: 12px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <h1>Preciona el boton</h1>
+        <button onclick="openHeart()">Abrir </button>
+    </div>
+
+    <script>
+        function openHeart() {
+            window.open('python y html.html', '_blank');  // Abre el archivo "corazon.html" en una nueva pestaña
+        }
+    </script>
+
+</body>
+</html>
