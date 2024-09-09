@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -44,10 +45,10 @@
         }
 
         ctx.fill();
-        drawHeart(w - 1, h - 1, iteration + 1); // Reducir el decremento para hacer un corazón más pequeño
+        drawHeart(w - 0.8, h - 0.8, iteration + 1); // Reducir el decremento para hacer un corazón más pequeño
 
         if (iteration === colors.length - 1) {
-            ctx.font = 'bold 20px Verdana';
+            ctx.font = 'bold 15px Verdana'; // Reducir el tamaño del texto también
             ctx.fillStyle = 'black';
             ctx.textAlign = 'center';
             ctx.fillText('I Love You <3', canvas.width / 2, canvas.height / 2);
@@ -55,7 +56,7 @@
     }
 
     const colors = ['red', 'red', 'red'];
-    drawHeart(10, 10, 0); // Reducir el tamaño inicial del corazón
+    drawHeart(7, 7, 0); // Reducir aún más el tamaño inicial del corazón
 </script>
 
 </body>
