@@ -44,7 +44,7 @@
         }
 
         ctx.fill();
-        drawHeart(w - 2, h - 2, iteration + 1);
+        drawHeart(w - 1, h - 1, iteration + 1); // Reducir el decremento para hacer un corazón más pequeño
 
         if (iteration === colors.length - 1) {
             ctx.font = 'bold 20px Verdana';
@@ -55,7 +55,7 @@
     }
 
     const colors = ['red', 'red', 'red'];
-    drawHeart(16, 16, 0);
+    drawHeart(10, 10, 0); // Reducir el tamaño inicial del corazón
 </script>
 
 </body>
